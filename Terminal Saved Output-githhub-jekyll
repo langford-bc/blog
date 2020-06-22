@@ -1,0 +1,338 @@
+Last login: Sat Jun 20 13:42:27 on ttys001
+(base) deen@x86_64-apple-darwin13 website % mkdir blog
+(base) deen@x86_64-apple-darwin13 website % cd blog
+(base) deen@x86_64-apple-darwin13 blog % git init
+Initialized empty Git repository in /Users/deen/Desktop/Development/website/blog/.git/
+(base) deen@x86_64-apple-darwin13 blog % touch index.html
+(base) deen@x86_64-apple-darwin13 blog % git add .
+(base) deen@x86_64-apple-darwin13 blog % git commit -m 'init'
+[master (root-commit) 56fb5e7] init
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+(base) deen@x86_64-apple-darwin13 blog % git status
+On branch master
+nothing to commit, working tree clean
+(base) deen@x86_64-apple-darwin13 blog % git remote add origin https://github.com/langford-bc/blog.git
+(base) deen@x86_64-apple-darwin13 blog % push -u origin master
+zsh: command not found: push
+(base) deen@x86_64-apple-darwin13 blog % git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 223 bytes | 223.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/langford-bc/blog.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+(base) deen@x86_64-apple-darwin13 blog %  git branch gh-pages
+(base) deen@x86_64-apple-darwin13 blog % git branch
+  gh-pages
+* master
+(base) deen@x86_64-apple-darwin13 blog % git push origin gh-pages
+Total 0 (delta 0), reused 0 (delta 0)
+remote: 
+remote: Create a pull request for 'gh-pages' on GitHub by visiting:
+remote:      https://github.com/langford-bc/blog/pull/new/gh-pages
+remote: 
+To https://github.com/langford-bc/blog.git
+ * [new branch]      gh-pages -> gh-pages
+(base) deen@x86_64-apple-darwin13 blog % touch CNAME
+(base) deen@x86_64-apple-darwin13 blog % nano CNAME
+(base) deen@x86_64-apple-darwin13 blog % git add .
+(base) deen@x86_64-apple-darwin13 blog % git commit
+hint: Waiting for your editor to close the file... error: There was a problem with the editor 'vi'.
+Please supply the message using either -m or -F option.
+(base) deen@x86_64-apple-darwin13 blog % git commit -m 'cname'
+[master 613dd2e] cname
+ 1 file changed, 1 insertion(+)
+ create mode 100644 CNAME
+(base) deen@x86_64-apple-darwin13 blog % git checkout gh-pages
+Switched to branch 'gh-pages'
+(base) deen@x86_64-apple-darwin13 blog % git branch
+* gh-pages
+  master
+(base) deen@x86_64-apple-darwin13 blog % git merge master
+Updating 56fb5e7..613dd2e
+Fast-forward
+ CNAME | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 CNAME
+(base) deen@x86_64-apple-darwin13 blog % git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 293 bytes | 293.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/langford-bc/blog.git
+   56fb5e7..613dd2e  gh-pages -> gh-pages
+   56fb5e7..613dd2e  master -> master
+(base) deen@x86_64-apple-darwin13 blog % cd ../ 
+(base) deen@x86_64-apple-darwin13 website % rm -rf blog
+(base) deen@x86_64-apple-darwin13 website % gem install jekyll
+Fetching addressable-2.7.0.gem
+Fetching public_suffix-4.0.5.gem
+Fetching colorator-1.1.0.gem
+Fetching http_parser.rb-0.6.0.gem
+Fetching eventmachine-1.2.7.gem
+Fetching em-websocket-0.5.1.gem
+Fetching concurrent-ruby-1.1.6.gem
+Fetching i18n-1.8.3.gem
+Fetching ffi-1.13.1.gem
+Fetching sassc-2.4.0.gem
+Fetching jekyll-sass-converter-2.1.0.gem
+Fetching rb-fsevent-0.10.4.gem
+Fetching rb-inotify-0.10.1.gem
+Fetching listen-3.2.1.gem
+Fetching jekyll-watch-2.2.1.gem
+Fetching kramdown-2.2.1.gem
+Fetching kramdown-parser-gfm-1.1.0.gem
+Fetching liquid-4.0.3.gem
+Fetching mercenary-0.4.0.gem
+Fetching forwardable-extended-2.6.0.gem
+Fetching pathutil-0.16.2.gem
+Fetching rouge-3.20.0.gem
+Fetching safe_yaml-1.0.5.gem
+Fetching unicode-display_width-1.7.0.gem
+Fetching jekyll-4.1.0.gem
+Fetching terminal-table-1.8.0.gem
+ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /Library/Ruby/Gems/2.6.0 directory.
+(base) deen@x86_64-apple-darwin13 website % sudo !! 
+sudo gem install jekyll
+Password:
+Fetching public_suffix-4.0.5.gem
+Fetching http_parser.rb-0.6.0.gem
+Fetching concurrent-ruby-1.1.6.gem
+Fetching addressable-2.7.0.gem
+Fetching i18n-1.8.3.gem
+Fetching colorator-1.1.0.gem
+Fetching eventmachine-1.2.7.gem
+Fetching em-websocket-0.5.1.gem
+Fetching ffi-1.13.1.gem
+Fetching sassc-2.4.0.gem
+Fetching jekyll-sass-converter-2.1.0.gem
+Fetching rb-fsevent-0.10.4.gem
+Fetching rb-inotify-0.10.1.gem
+Fetching listen-3.2.1.gem
+Fetching jekyll-watch-2.2.1.gem
+Fetching kramdown-2.2.1.gem
+Fetching kramdown-parser-gfm-1.1.0.gem
+Fetching liquid-4.0.3.gem
+Fetching mercenary-0.4.0.gem
+Fetching forwardable-extended-2.6.0.gem
+Fetching pathutil-0.16.2.gem
+Fetching rouge-3.20.0.gem
+Fetching safe_yaml-1.0.5.gem
+Fetching unicode-display_width-1.7.0.gem
+Fetching terminal-table-1.8.0.gem
+Fetching jekyll-4.1.0.gem
+Successfully installed public_suffix-4.0.5
+Successfully installed addressable-2.7.0
+Successfully installed colorator-1.1.0
+Building native extensions. This could take a while...
+Successfully installed http_parser.rb-0.6.0
+Building native extensions. This could take a while...
+Successfully installed eventmachine-1.2.7
+Successfully installed em-websocket-0.5.1
+Successfully installed concurrent-ruby-1.1.6
+
+HEADS UP! i18n 1.1 changed fallbacks to exclude default locale.
+But that may break your application.
+
+If you are upgrading your Rails application from an older version of Rails:
+
+Please check your Rails app for 'config.i18n.fallbacks = true'.
+If you're using I18n (>= 1.1.0) and Rails (< 5.2.2), this should be
+'config.i18n.fallbacks = [I18n.default_locale]'.
+If not, fallbacks will be broken in your app by I18n 1.1.x.
+
+If you are starting a NEW Rails application, you can ignore this notice.
+
+For more info see:
+https://github.com/svenfuchs/i18n/releases/tag/v1.1.0
+
+Successfully installed i18n-1.8.3
+Building native extensions. This could take a while...
+Successfully installed ffi-1.13.1
+Building native extensions. This could take a while...
+Successfully installed sassc-2.4.0
+Successfully installed jekyll-sass-converter-2.1.0
+Successfully installed rb-fsevent-0.10.4
+Successfully installed rb-inotify-0.10.1
+Successfully installed listen-3.2.1
+Successfully installed jekyll-watch-2.2.1
+Successfully installed kramdown-2.2.1
+Successfully installed kramdown-parser-gfm-1.1.0
+Successfully installed liquid-4.0.3
+Successfully installed mercenary-0.4.0
+Successfully installed forwardable-extended-2.6.0
+Successfully installed pathutil-0.16.2
+Successfully installed rouge-3.20.0
+Successfully installed safe_yaml-1.0.5
+Successfully installed unicode-display_width-1.7.0
+Successfully installed terminal-table-1.8.0
+Successfully installed jekyll-4.1.0
+Parsing documentation for public_suffix-4.0.5
+Installing ri documentation for public_suffix-4.0.5
+Parsing documentation for addressable-2.7.0
+Installing ri documentation for addressable-2.7.0
+Parsing documentation for colorator-1.1.0
+Installing ri documentation for colorator-1.1.0
+Parsing documentation for http_parser.rb-0.6.0
+unknown encoding name "chunked\r\n\r\n25" for ext/ruby_http_parser/vendor/http-parser-java/tools/parse_tests.rb, skipping
+Installing ri documentation for http_parser.rb-0.6.0
+Parsing documentation for eventmachine-1.2.7
+Installing ri documentation for eventmachine-1.2.7
+Parsing documentation for em-websocket-0.5.1
+Installing ri documentation for em-websocket-0.5.1
+Parsing documentation for concurrent-ruby-1.1.6
+Installing ri documentation for concurrent-ruby-1.1.6
+Parsing documentation for i18n-1.8.3
+Installing ri documentation for i18n-1.8.3
+Parsing documentation for ffi-1.13.1
+Installing ri documentation for ffi-1.13.1
+Parsing documentation for sassc-2.4.0
+Installing ri documentation for sassc-2.4.0
+Parsing documentation for jekyll-sass-converter-2.1.0
+Installing ri documentation for jekyll-sass-converter-2.1.0
+Parsing documentation for rb-fsevent-0.10.4
+Installing ri documentation for rb-fsevent-0.10.4
+Parsing documentation for rb-inotify-0.10.1
+Installing ri documentation for rb-inotify-0.10.1
+Parsing documentation for listen-3.2.1
+Installing ri documentation for listen-3.2.1
+Parsing documentation for jekyll-watch-2.2.1
+Installing ri documentation for jekyll-watch-2.2.1
+Parsing documentation for kramdown-2.2.1
+Installing ri documentation for kramdown-2.2.1
+Parsing documentation for kramdown-parser-gfm-1.1.0
+Installing ri documentation for kramdown-parser-gfm-1.1.0
+Parsing documentation for liquid-4.0.3
+Installing ri documentation for liquid-4.0.3
+Parsing documentation for mercenary-0.4.0
+Installing ri documentation for mercenary-0.4.0
+Parsing documentation for forwardable-extended-2.6.0
+Installing ri documentation for forwardable-extended-2.6.0
+Parsing documentation for pathutil-0.16.2
+Installing ri documentation for pathutil-0.16.2
+Parsing documentation for rouge-3.20.0
+Installing ri documentation for rouge-3.20.0
+Parsing documentation for safe_yaml-1.0.5
+Installing ri documentation for safe_yaml-1.0.5
+Parsing documentation for unicode-display_width-1.7.0
+Installing ri documentation for unicode-display_width-1.7.0
+Parsing documentation for terminal-table-1.8.0
+Installing ri documentation for terminal-table-1.8.0
+Parsing documentation for jekyll-4.1.0
+Installing ri documentation for jekyll-4.1.0
+Done installing documentation for public_suffix, addressable, colorator, http_parser.rb, eventmachine, em-websocket, concurrent-ruby, i18n, ffi, sassc, jekyll-sass-converter, rb-fsevent, rb-inotify, listen, jekyll-watch, kramdown, kramdown-parser-gfm, liquid, mercenary, forwardable-extended, pathutil, rouge, safe_yaml, unicode-display_width, terminal-table, jekyll after 61 seconds
+26 gems installed
+(base) deen@x86_64-apple-darwin13 website % jekyll new blog
+Running bundle install in /Users/deen/Desktop/Development/website/blog... 
+
+
+Your user account isn't allowed to install to the system RubyGems.
+  You can cancel this installation and run:
+
+      bundle install --path vendor/bundle
+
+  to install the gems into ./vendor/bundle/, or you can enter your password
+  and install the bundled gems to RubyGems using sudo.
+
+  Password: 
+
+
+Your user account isn't allowed to install to the system RubyGems.
+  You can cancel this installation and run:
+
+      bundle install --path vendor/bundle
+
+  to install the gems into ./vendor/bundle/, or you can enter your password
+  and install the bundled gems to RubyGems using sudo.
+
+  Password: 
+Traceback (most recent call last):
+	15: from /usr/local/bin/jekyll:23:in `<main>'
+	14: from /usr/local/bin/jekyll:23:in `load'
+	13: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/exe/jekyll:15:in `<top (required)>'
+	12: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary.rb:21:in `program'
+	11: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary/program.rb:44:in `go'
+	10: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `execute'
+	 9: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `each'
+	 8: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `block in execute'
+	 7: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:19:in `block (2 levels) in init_with_program'
+	 6: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:41:in `process'
+	 5: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:143:in `after_install'
+	 4: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:155:in `bundle_install'
+	 3: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:155:in `chdir'
+	 2: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:157:in `block in bundle_install'
+	 1: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/utils/exec.rb:18:in `run'
+/Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/utils/exec.rb:18:in `read': Interrupt
+
+(base) deen@x86_64-apple-darwin13 website % sudo jekyll new blog
+Password:
+          Conflict: /Users/deen/Desktop/Development/website/blog exists and is not empty.
+                    Ensure /Users/deen/Desktop/Development/website/blog is empty or else try again with `--force` to proceed and overwrite any files.
+(base) deen@x86_64-apple-darwin13 website % rm -rf blog
+(base) deen@x86_64-apple-darwin13 website % ls
+gatsby		p-cloud-test
+(base) deen@x86_64-apple-darwin13 website % jekyll new blog
+Running bundle install in /Users/deen/Desktop/Development/website/blog... 
+
+
+Your user account isn't allowed to install to the system RubyGems.
+  You can cancel this installation and run:
+
+      bundle install --path vendor/bundle
+
+  to install the gems into ./vendor/bundle/, or you can enter your password
+  and install the bundled gems to RubyGems using sudo.
+
+  Password: 
+Traceback (most recent call last):
+	15: from /usr/local/bin/jekyll:23:in `<main>'
+	14: from /usr/local/bin/jekyll:23:in `load'
+	13: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/exe/jekyll:15:in `<top (required)>'
+	12: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary.rb:21:in `program'
+	11: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary/program.rb:44:in `go'
+	10: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `execute'
+	 9: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `each'
+	 8: from /Library/Ruby/Gems/2.6.0/gems/mercenary-0.4.0/lib/mercenary/command.rb:221:in `block in execute'
+	 7: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:19:in `block (2 levels) in init_with_program'
+	 6: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:41:in `process'
+	 5: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:143:in `after_install'
+	 4: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:155:in `bundle_install'
+	 3: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:155:in `chdir'
+	 2: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/commands/new.rb:157:in `block in bundle_install'
+	 1: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/utils/exec.rb:18:in `run'
+/Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/utils/exec.rb:18:in `read': Interrupt
+
+(base) deen@x86_64-apple-darwin13 website % sudo !!
+sudo jekyll new blog
+          Conflict: /Users/deen/Desktop/Development/website/blog exists and is not empty.
+                    Ensure /Users/deen/Desktop/Development/website/blog is empty or else try again with `--force` to proceed and overwrite any files.
+(base) deen@x86_64-apple-darwin13 website % ls
+blog		gatsby		p-cloud-test
+(base) deen@x86_64-apple-darwin13 website % cd blog
+(base) deen@x86_64-apple-darwin13 blog % ls
+404.html	_config.yml	about.markdown
+Gemfile		_posts		index.markdown
+(base) deen@x86_64-apple-darwin13 blog % jekyll serve
+Traceback (most recent call last):
+	15: from /usr/local/bin/jekyll:23:in `<main>'
+	14: from /usr/local/bin/jekyll:23:in `load'
+	13: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/exe/jekyll:11:in `<top (required)>'
+	12: from /Library/Ruby/Gems/2.6.0/gems/jekyll-4.1.0/lib/jekyll/plugin_manager.rb:52:in `require_from_bundler'
+	11: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler.rb:107:in `setup'
+	10: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/runtime.rb:20:in `setup'
+	 9: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/runtime.rb:108:in `block in definition_method'
+	 8: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/definition.rb:226:in `requested_specs'
+	 7: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/definition.rb:237:in `specs_for'
+	 6: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/definition.rb:170:in `specs'
+	 5: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/definition.rb:258:in `resolve'
+	 4: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/resolver.rb:22:in `resolve'
+	 3: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/resolver.rb:49:in `start'
+	 2: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/resolver.rb:255:in `verify_gemfile_dependencies_are_found!'
+	 1: from /System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/resolver.rb:255:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/2.6/usr/lib/ruby/2.6.0/bundler/resolver.rb:287:in `block in verify_gemfile_dependencies_are_found!': Could not find gem 'minima (~> 2.5)' in any of the gem sources listed in your Gemfile. (Bundler::GemNotFound)
+(base) deen@x86_64-apple-darwin13 blog % 
